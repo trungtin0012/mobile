@@ -1,0 +1,66 @@
+<!-- Certificate announce page  -->
+<div class="oj-hybrid-applayout-page">
+  <div class="oj-applayout-fixed-top">
+    <!--
+     ** Oracle JET V10.0.0 hybrid mobile application header pattern.
+     ** Please see the Oracle JET Cookbook App Shell: Hybrid Mobile demos for
+     ** more information on how to use this pattern.
+  -->
+    <header role="banner" class="oj-hybrid-applayout-header">
+      <oj-module config="[[headerConfig]]"></oj-module>
+    </header>
+  </div>
+  <!-- Certificate announce main content -->
+  <div id="certificateNotification-page" class="oj-applayout-content panel-button">
+    <div role="main" class="oj-hybrid-applayout-content">
+      <!-- Picture button panel selectors -->
+      <!-- "Take a new photo" button panel -->
+      <div class="oj-flex button-panel cameraButton">
+        <div class="oj-flex-item camera">
+          <oj-button class="oj-panel oj-panel-shadow-sm oj-sm-margin-2x camera"
+            on-oj-action="[[cameraSrcTypeSelector]]">
+            TAKE_NEW_PICTURE
+          </oj-button>
+
+          <oj-button class="oj-panel oj-panel-shadow-sm oj-sm-margin-2x gallery"
+            on-oj-action="[[cameraSrcTypeSelector]]">
+            SELECT_FROM_GALERY
+          </oj-button>
+          <oj-button class="oj-panel oj-panel-shadow-sm oj-sm-margin-2x gallery"
+            on-oj-action="[[getFile]]">
+            GET_FILE
+          </oj-button>
+          <oj-input-text value="{{filename}}"></oj-input-text>
+          <oj-button class="oj-panel oj-panel-shadow-sm oj-sm-margin-2x gallery"
+            on-oj-action="[[downloadFile]]">
+            Download
+          </oj-button>
+          <img id="myImage" style="width: 100%;" src="file:///data/user/0/com.oracle.JETmobileapp/cache/IMG_20210429_164656.jpg"/>
+        </div>
+        <!-- "Select from the gallery" button panel -->
+        <!-- <div class="oj-flex button-panel galleryButton" id="selectFromTheGallery" data-bind="visible: cameraButtonVisibility">
+                  <div class="oj-flex-item gallery">
+                      <div class="oj-panel oj-panel-shadow-sm oj-sm-margin-2x gallery" on-click="[[cameraSrcTypeSelector]]">
+                          <div id="panel-button-panel-icon" class="panel-button-panel-icon gallery">
+                              <img class="gallery" src="css/images/gallery.png">
+                          </div>
+                          <div id="gallery-button-label" class="panel-button-label gallery">
+                              <span class="gallery">
+                                  <oj-bind-text value="[[l10('CERTIFICATE_NOTIFICATION.SELECT_FROM_GALERY')]]"></oj-bind-text>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div> -->
+      </div>
+    </div>
+    <!-- Certificate (picture) main display -->
+    <!-- <div class="oj-hybrid-padding certificate-picture-container" data-bind="visible:imageVisibility">
+          <div class="oj-flex">
+              <div class="oj-flex-item certificate-picture" id="certificate-picture">
+                  <img class="certificate-picture-img" id="certificate" data-bind="attr:{src:photoCertificateDisplay}">
+              </div>
+          </div>
+      </div> -->
+  </div>
+</div>
